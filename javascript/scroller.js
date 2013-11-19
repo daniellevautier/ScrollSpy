@@ -8,11 +8,15 @@ var settings = {
   //Active Class. The class to assign a 
   activeClass: '.active',
   activeParent: 'activeParent',
+  //Active Offset sets where the active class should change in pixels from top of the screen.
+  activeOffset: 40,
   //Fixed Position Class (no # or . idenfifier, must be class)
   fixedPositionClass: 'subNavigationPosition',
   hideClass: 'subNavHide',
   offset: 0,
   refreshTime: 10,
+  //Start height is the height of the menu from the top of the page.
+  startHeight: 214.875
 }
 
 /*
@@ -26,7 +30,6 @@ Credit to the Author (who I cannot locate)
 // Cache selectors
 var lastId,
     topMenu = $(settings.menuIdentifier),
-    topMenuHeight = topMenu.outerHeight()+15,
     // All list items
     menuItems = topMenu.find("a"),
     // Anchors corresponding to menu items
@@ -49,7 +52,7 @@ menuItems.click(function(e){
 // Bind to scroll
 $(window).scroll(function(){
    // Get container scroll position
-   var fromTop = $(this).scrollTop()+topMenuHeight;
+   var fromTop = $(this).scrollTop() + settings.activeOffset;
    
    // Get id of current scroll item
    var cur = scrollItems.map(function(){
@@ -75,7 +78,7 @@ Written by Alex Mason, MBA Brighton 2013
 The Height of when the menu becomes fixed is calculated by getting the outer height of the elements above the document.
 In this instance I have calculated the height of the 
 */
-
+divPosition  = getLocation(settings.menuIdentifier);
 
 function getLocation(passedElement){
   var strippedElement = passedElement.substring(1);
@@ -90,8 +93,7 @@ function getLocation(passedElement){
         });
 
         //Calculate the hight of element above subMenu. This is used when applying the class that fixes the sub Menu position
-        divPosition  = getLocation(settings.menuIdentifier);
-        moveHeight = divPosition + settings.offset;
+        moveHeight = settings.startHeight;
 
         var scrollTimer = null;
 
@@ -107,7 +109,11 @@ function getLocation(passedElement){
             function handleScroll() {
                 scrollTimer = null;
                 //ScrollHeight fetches the position of the scroll bar. This section fixes the scroll bar if element above the menu has moved off the page and removed it if it reapears.
-                scrollHeight = $(document).scrollTop();
+                scrollHeight = $(document).scrollTop()
+
+                console.log('Div position' + divPosition);
+                console.log('Scroll Height' + scrollHeight);
+                console.log('Move Height' + moveHeight);
 
                 if (scrollHeight > moveHeight){
                     $(settings.menuIdentifier + ' ul').addClass(settings.fixedPositionClass);

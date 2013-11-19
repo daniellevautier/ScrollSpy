@@ -75,6 +75,9 @@ article {
 .active > a {
   color: orange; }
 
+.active > ul {
+  max-height: 5000px !important; }
+
 .subNavHide ul ul {
   max-height: 0;
   float: left;

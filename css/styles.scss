@@ -32,7 +32,6 @@ header {
 	border-bottom: 1px solid #ccc;
 	margin-top:50px;
 }
-
 .mainContent {
 	float:left;
 	max-width:960px;
@@ -90,6 +89,9 @@ article {
 	}
 .active > a{
 	color: orange;
+}
+.active > ul{
+	max-height: 5000px!important;
 }
 //Sub nav is active show internal list. 
 //This is a new classed added to the parent ul in order 
