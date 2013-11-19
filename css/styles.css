@@ -46,11 +46,10 @@ header {
     padding: 0;
     float: left;
     width: 20%;
-    background: #fff;
     margin-top: 40px;
     list-style: none; }
     #subNavigation ul li {
-      width: 170px;
+      width: 200px;
       float: left; }
     #subNavigation ul ul {
       position: inherit;
