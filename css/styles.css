@@ -1,0 +1,93 @@
+/*------------CSS------------*/
+.container {
+  width: 100%;
+  float: left; }
+
+header {
+  float: left;
+  width: 100%;
+  background: #ccc;
+  z-index: 1;
+  padding: 0; }
+  header nav li {
+    display: inline;
+    padding: 0 40px; }
+
+.wrapper {
+  float: left;
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  float: none; }
+
+.pageTitle {
+  width: 100%;
+  float: left;
+  border-bottom: 1px solid #ccc;
+  margin-top: 50px; }
+
+.mainContent {
+  float: left;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 3% 0;
+  width: 69%; }
+
+.menu a:hover {
+  color: #fff;
+  background-color: #4f8cb3;
+  cursor: pointer; }
+
+#subNavigation {
+  min-height: 100px;
+  float: left;
+  width: 25%; }
+  #subNavigation ul {
+    padding: 0;
+    float: left;
+    width: 20%;
+    background: #fff;
+    margin-top: 40px;
+    list-style: none; }
+    #subNavigation ul li {
+      width: 170px;
+      float: left; }
+    #subNavigation ul ul {
+      position: inherit;
+      float: left;
+      text-indent: 20px;
+      margin-top: 0;
+      width: 100%; }
+    #subNavigation ul a {
+      display: block;
+      padding: 10px;
+      border-bottom: 1px solid #ccc;
+      text-decoration: none; }
+
+.subNavigationPosition {
+  position: fixed;
+  top: 0px; }
+
+article {
+  float: left;
+  width: 100%;
+  margin: 0 0 18px 0; }
+
+.active > a {
+  color: orange; }
+
+.subNavHide ul ul {
+  max-height: 0;
+  float: left;
+  overflow: hidden;
+  width: 100%;
+  -webkit-transition: all 1.0s ease-in-out;
+  -moz-transition: all 1.0s ease-in-out;
+  -o-transition: all 1.0s ease-in-out;
+  transition: all 1.0s ease-in-out; }
+.subNavHide .activeParent {
+  max-height: 500px;
+  -webkit-transition: all 1.0s ease-in-out;
+  -moz-transition: all 1.0s ease-in-out;
+  -o-transition: all 1.0s ease-in-out;
+  transition: all 1.0s ease-in-out; }
