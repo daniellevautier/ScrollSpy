@@ -1,117 +1,152 @@
-/*------------CSS------------*/
+/*------------Layout CSS------------*/
 .container {
-	width:100%; 
-	float:left;
+	width:94%;
+	padding:0 3%; 
+	margin: 0 auto;
+	max-width:960px;
 	}
 
-//Header is fixed in this example and given some simple styling.
-header {
-	float:left;
-	width:100%;
-	background: #ccc;
-	z-index: 1;
-	padding:0;
-	nav{
-		li{
-			display: inline;
-			padding: 0 40px;
-		}
-	}
-}
-.wrapper {
-	float:left;
-	width:100%;
-	max-width:960px;
-	margin:0 auto;
-	float:none;
-}
-//Page Title: margin top is set as the offset from the static menu
 .pageTitle {
 	width:100%; 
 	float:left;
 	border-bottom: 1px solid #ccc;
-	margin-top:50px;
-}
+	margin-bottom:20px;
+	}
+
 .mainContent {
-	float:left;
+	float:right;
 	max-width:960px;
 	margin:0 auto;
-	padding:3% 0;
-	width:69%;
-}
+	padding:0;
+	width:100%;
+	}
 
 .menu a:hover { color:#fff;
 	background-color:#4f8cb3;
 	cursor:pointer;
 	}
-//Floating navigation for anchor points on single page
-#subNavigation{
-	min-height: 100px;
+
+h2, h3 {margin:0; padding-top:20px;}
+
+/*------------Start ScrollSpy CSS------------*/
+
+/* Menu Styling */
+#subNavigation {
 	float: left;
-	width: 25%;
-	ul{
-		padding: 0;
+	width: 100%;
+	background-color:#eee;
+	font-size:14px;
+	margin-bottom:20px;
+	
+	ul {
 		float: left;
-		width:20%;
-		margin-top: 40px;
+		width:100%;
+		margin: 0;
+		padding:0;
 		list-style: none;
 
-		li{
-			width: 200px;
+		li {
+			float:left;
+			width: 100%;
+			border-top:1px solid #ccc;
+			
+			&:first-child  {
+				border-top:0;
+				}
+			}
+
+		a {
+			width: 92%;
 			float: left;
-		}
-		// Nested ul
-		ul{
-				position: inherit;
-				float: left;
-				text-indent: 20px;
-				margin-top: 0;
-				width: 100%;
-		}
-		
-		a{
-			display: block;
-			padding: 10px;
-			border-bottom: 1px solid #ccc;
 			text-decoration: none;
+			padding: 10px 4%;
+			
+			&:hover {
+			color:#000;
+			background-color:#ccc;
+			}
 		}
+			
+		// Nested ul
+		ul {
+			padding:0;
+			display:none; //Optional hide sub navigation for small screems
+
+			li {
+				border-top:0; 
+				}
+
+			a {
+				overflow: visible;
+				padding:4px 0 4px 8%;
+				width: 92%;
+				}
+		}	
 	}
 }
+
+li.activeParent > a, .active > a  {
+	font-weight:bold;
+	}
+
+
+
+/* Functionality */
 //Adjust top position relative to the height of the pageTitle element so that the navigation bar doesn't jump when the fixed position class is activated
 .subNavigationPosition{
 	position: fixed;
-	top:0px;	
-}
-article {
-	float:left;
-	width:100%;
-	margin:0 0 18px 0;
+	top:20px;
 	}
-.active > a{
-	color: orange;
+
+.active > ul, .activeParent {
+	max-height: 5000px!important; //Fixes Chrome bug animation n.b. can incrase 5000px if required
+	}
+
+
+/* Media Queries */
+@media only screen and (max-width:768px) {
+	#subNavigation {
+		position: relative!important;
+	}
 }
-.active > ul{
-	max-height: 5000px!important;
-}
-//Sub nav is active show internal list. 
-//This is a new classed added to the parent ul in order 
-//for the internal content to be accessible for those without javascript
-.subNavHide{
-  ul ul{
+
+@media only screen and (min-width:768px) {
+	#subNavigation {
+		width:28%;
+		margin-right:3%;
+		max-width:260px;
+
+		ul ul {
+			display: block;
+		}
+	}
+
+	.mainContent {
+		width:69%;
+		}
+
+	//This is a new classed added to the parent ul in order 
+	//for the internal content to be accessible for those without javascript
+	.subNavHide {
+	  ul ul {
 		max-height: 0;
 		float: left;
 		overflow: hidden;
 		width: 100%;
+		display: block; //Sub nav is active show internal list. 
 		-webkit-transition:all 0.8s ease-in-out;
     	-moz-transition:all 0.8s ease-in-out;
     	-o-transition:all 0.8s ease-in-out;
     	transition:all 0.8s ease-in-out;
-	}
+		}
+
 	.activeParent{
-		max-height: 500px;
 		-webkit-transition:all 0.8s ease-in-out;
     	-moz-transition:all 0.8s ease-in-out;
     	-o-transition:all 0.8s ease-in-out;
     	transition:all 0.8s ease-in-out;
+		}
 	}
 }
+
+/*------------End ScrollSpy CSS------------*/

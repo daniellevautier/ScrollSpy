@@ -91,7 +91,7 @@ function getLocation(passedElement){
 }
 
 //Add Class subNavHide on document load so that the document is still readable by those without js.
-        $(document).ready(function(){
+        $(function(){
             $(settings.menuIdentifier).addClass(settings.hideClass);
         });
 
@@ -115,16 +115,17 @@ function getLocation(passedElement){
                 scrollHeight = $(document).scrollTop()
 
                 if (scrollHeight > moveHeight){
-                    $(settings.menuIdentifier + ' ul').addClass(settings.fixedPositionClass);
+                    $(settings.menuIdentifier).addClass(settings.fixedPositionClass);
                 }
                 else {
-                    $(settings.menuIdentifier + ' ul').removeClass(settings.fixedPositionClass);
+                    $(settings.menuIdentifier).removeClass(settings.fixedPositionClass);
                 }
                 //Select the active anchors parent
                 target =  $(settings.activeClass).parent();
                 //If the elements (settings.activeClass) parent is a li (and thus a subcategory) give that parent a class. This class displays the subcategory list.
                 if ( target.parent().is("li")){
                     $(settings.activeClass).parent().addClass(settings.activeParent);
+                    $(settings.activeClass).parent().parent().addClass(settings.activeParent);
                 }
                 //if the active class is not a subcategory then remove class active parent, hiding the subcategory
                 else if(target.is("ul")){
