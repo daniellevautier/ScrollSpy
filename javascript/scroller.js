@@ -111,10 +111,6 @@ function getLocation(passedElement){
                 //ScrollHeight fetches the position of the scroll bar. This section fixes the scroll bar if element above the menu has moved off the page and removed it if it reapears.
                 scrollHeight = $(document).scrollTop()
 
-                console.log('Div position' + divPosition);
-                console.log('Scroll Height' + scrollHeight);
-                console.log('Move Height' + moveHeight);
-
                 if (scrollHeight > moveHeight){
                     $(settings.menuIdentifier + ' ul').addClass(settings.fixedPositionClass);
                 }
