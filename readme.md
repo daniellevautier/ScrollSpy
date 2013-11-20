@@ -1,30 +1,29 @@
-# Scroll spy / Expander
+# Scroll Spy / Expander
 
 This is a simple sidebar navigation plug in. Useful for navigating long text documents. It will scroll with your document to help you locate where you are. Any sub navigation is handled by expanding any nested lists one that point in the document is reached. Much like the bootstrap scroll spy.
 
-Css class names can be ammended and further notes can be found in the scroller.js file.  Enjoy.
+Css class names can be amended and further notes can be found in the scroller.js file.  Enjoy.
 
 ##Instructions.
 
 1. Drop the scroller.js file into your file structure/ html or embed.
 2. Do the same with styles.css
 3. Change default css classes in the settings in scroller.js if needed. The example shows how the markup should be laid out.
-4. Uncomment '// console.log(getLocation(settings.menuIdentifier));'' and look in the console to get your startHeight. Or enter manualy for a smooth transition to the fixed position on scrolling down the page.
+4. Uncomment '// console.log(getLocation(settings.menuIdentifier));'' and look in the console to get your startHeight. Or enter manually for a smooth transition to the fixed position on scrolling down the page.
 
 
-Please Fork/ Contibute
+Please Fork/ Contribute
 
 
 ### TO DO
 
-1. Get settings.startheight to be set up automaticly
+1. Get settings.startheight to be set up automatically
 2. Tidy code/ review code comments
 3. Come up with a better name
 
 ###Licence
 
 ####The MIT License (MIT)
-[OSI Approved License]
 The MIT License (MIT)
 
 Copyright (c) 2013
