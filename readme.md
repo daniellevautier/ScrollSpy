@@ -14,7 +14,6 @@ Css class names can be ammended and further notes can be found in the scroller.j
 
 Please Fork/ Contibute
 
-###Licence is MIT
 
 ### TO DO
 
