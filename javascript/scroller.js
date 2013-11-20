@@ -16,8 +16,11 @@ var settings = {
   offset: 0,
   refreshTime: 10,
   //Start height is the height of the menu from the top of the page.
-  startHeight: 214.875
+  //Start height is the height of the menu from the top of the page.
+  startHeight: 117.78125
 }
+//Uncomment to get start hide in console
+// console.log(getLocation(settings.menuIdentifier));
 
 /*
 First section highlights text as per this resource
